@@ -1,0 +1,141 @@
+const n1 = Number(prompt("Digite o primeiro número: "))
+const n2 = Number(prompt("Digite o segundo número: "))
+const n3 = Number(prompt("Digite o terceiro número: "))
+
+if(n1 > n2 && n1 > n3){
+    alert(`O maior número é o ${n1}`)
+}else if(n2 > n1 && n2 > n3){
+    alert(`O maior número é o ${n2}`)
+}else if(n3 > n1 && n3 > n2){
+    alert(`O maior número é o ${n3}`)
+}else{
+    alert("São todos iguais")
+}
+
+
+const sexo = prompt("Digite a letra do seu sexo [M | F | O ]").toUpperCase()
+
+if(sexo === "M"){
+    alert("Masculino")
+}else if(sexo === "F"){
+    alert("Feminino")
+}else if(sexo === "O"){
+    alert("Outros")
+}else{
+    alert("Opção Inválida")
+}
+
+
+
+
+
+const sexo = prompt("Digite a letra do seu sexo [M | F | O ]").toUpperCase()
+
+switch(sexo){
+    case "M":
+        alert("Masculino")
+        break
+    case "F":
+        alert("Feminino")
+        break
+    case "O": 
+        alert("Outros")
+        break
+    default:
+        alert("Opção inválida")
+        break
+}
+
+
+
+
+
+
+
+
+const numero_semana = Number(prompt("Escolha uma opção\n1 - Domingo\n2 - Segunda\n3 - Terça\n4 - Quarta\n5 - Quinta\n6 - Sexta\n7 - Sábado"))
+
+switch(numero_semana){
+    case 1:
+        alert("Você escolheu o domingo")
+        break
+    case 2:
+        alert("Você escolheu a segunda-feira")
+        break
+    case 3:
+        alert("Você escolheu a terça-feira")
+        break
+    case 4:
+        alert("Você escolheu a quarta-feira")
+        break
+    case 5:
+        alert("Você escolheu a quinta-feira")
+        break
+    case 6:
+        alert("Você escolheu a sexta-feira")
+        break
+    case 7:
+        alert("Você escolheu o sábado")
+        break
+    default:
+        alert("Opção inválida")
+        break
+}
+
+
+
+
+
+
+
+
+const letra_digitada = prompt("Digite uma letra: ").toLowerCase().trim()
+const conjunto_de_vogais = "aeiouâãáàéèêíóôõúü"
+
+if(letra_digitada.length === 1){
+    if(conjunto_de_vogais.includes(letra_digitada)){
+        alert("É vogal")
+    }else{
+        alert("Não é vogal")
+    }
+}else{
+    alert("Digite exatamente 1 ÚNICA letra")
+}
+
+
+
+
+let contador = 0
+
+while(contador <= 10){
+    console.log(`Nessa volta o contador é ${contador}`)
+    // contador = contador + 1
+    // contador += 1
+    contador++
+}
+
+
+
+
+
+
+let contador = 20
+
+while(contador <= 130){
+    console.log(contador)
+    contador++
+}
+
+
+
+
+
+
+
+let contador = Number(prompt("Digite um número: "))
+
+
+while(contador >= 0){
+    console.log(contador)
+    contador--
+}
