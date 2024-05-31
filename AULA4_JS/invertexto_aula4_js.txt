@@ -1,0 +1,83 @@
+FAÇA UMA TABUADA ONDE O USUÁRIO DIGITA O NÚMERO QUE QUER MULTIPLICAR DE 1 A 10
+
+const numero = Number(prompt('Digite um número para calcular na tabuada: '))
+
+for(let i = 0; i <= 10; i++){
+    console.log(`${i} x ${numero} = ${i * numero}`)
+
+}
+// let controle = 0
+// while(controle <= 10){
+//     console.log(`${controle} x ${numero} = ${controle * numero}`)
+//     controle++
+// }
+
+=======================================================================================
+
+FAÇA UM PROGRAMA QUE PEÇA AO USUÁRIO LOGIN E SENHA E SE ELE ERRAR 3 VEZES APAREÇA UMA MENSAGEM DIZENDO QUE A PRÓXIMA TENTATIVA VAI BLOQUEAR SUA CONTA. SE ACERTA APAREÇA UM SEJA BEM VINDO.
+
+
+const nomeUsuario = 'diego'
+const senhaUsuario = '123456'
+let tentativas = 3
+
+for (let i = 0; i < tentativas; i++) {
+    const login = prompt('Digite seu usuário');
+    const senha = prompt('Digite sua senha');
+
+    if (login === nomeUsuario && senha === senhaUsuario) {
+        alert('Logado com sucesso.')
+        break
+    } else {
+        const chancesRestantes = tentativas - (i + 1)
+        if (chancesRestantes > 0) {
+            alert(`Usuário ou senha incorretos. Você possui ${chancesRestantes} chance(s) restante(s).`)
+        } else {
+            alert('Conta bloqueada, contate o suporte.')
+        }
+    }
+}
+
+
+==========================================================================================================
+
+Escreva um programa que solicite um número e verifique se ele é
+um número primo.
+
+
+const numero = parseInt(prompt("Digite um número:"));
+let ehPrimo = true;
+
+if (numero <= 1) {
+    ehPrimo = false;
+} else {
+    for (let i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            ehPrimo = false;
+        }
+    }
+}
+
+if (ehPrimo && numero > 1) {
+    alert(`${numero} é um número primo.`);
+} else {
+    alert(`${numero} não é um número primo.`);
+}
+
+
+================================================================================================
+
+Atividade 06
+Escreva um programa que irá solicitar ao usuário uma palavra e que
+imprimirá no console a palavra sem vogais.
+
+
+const palavra = prompt('Digite uma palavra:')
+const vogais = 'aeiouAEIOU'
+
+for(let cosoante of palavra){
+    if(vogais.includes(cosoante)){
+        continue
+    }
+    console.log(cosoante)
+}
