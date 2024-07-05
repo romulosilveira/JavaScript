@@ -1,0 +1,288 @@
+FAÇA UM PROGRAMA QUE PEDE PARA O USUÁRIO DIGITAR 4 NÚMEROS USANDO 4 INPUTS E UM BOTÃO QUE AO SER CLICADO MOSTRE NA TELA QUAL É O MAIOR E O MENOR NÚMERO DOS 4
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor</title>
+</head>
+<body>
+    <h1>Achando o maior e o menor número</h1>
+
+    <label for="n1">Primeiro número</label>
+    <input type="number" name="n1" id="n1" placeholder="Digite um número">
+    <br>
+
+    <label for="n2">Segundo número</label>
+    <input type="number" name="n2" id="n2" placeholder="Digite um número">
+    <br>
+
+
+    <label for="n3">Terceiro número</label>
+    <input type="number" name="n3" id="n3" placeholder="Digite um número">
+    <br>
+
+    <label for="n4">Quarto número</label>
+    <input type="number" name="n4" id="n4" placeholder="Digite um número">
+    <br>
+
+    <button id="botao">Procurar</button>
+
+    <p id="resultado_maior"></p>
+    <p id="resultado_menor"></p>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
+
+const n1 = document.querySelector("#n1")
+const n2 = document.querySelector("#n2")
+const n3 = document.querySelector("#n3")
+const n4 = document.querySelector("#n4")
+const botao = document.querySelector("#botao")
+const resultado_maior = document.querySelector("#resultado_maior")
+const resultado_menor = document.querySelector("#resultado_menor")
+
+
+botao.addEventListener("click", ()=>{
+    const num1 = Number(n1.value)
+    const num2 = Number(n2.value)
+    const num3 = Number(n3.value)
+    const num4 = Number(n4.value)
+    
+    if(num1 > num2 && num1 > num3 && num1 > num4){
+        resultado_maior.textContent = `O maior número é o ${num1}`
+    }else if(num2 > num1 && num2 > num3 && num2 > num4){
+        resultado_maior.textContent = `O maior número é o ${num2}`
+    }else if(num3 > num1 && num3 > num2 && num3 > num4){
+        resultado_maior.textContent = `O maior número é o ${num3}`
+    }else if(num4 > num1 && num4 > num3 && num4 > num3){
+        resultado_maior.textContent = `O maior número é o ${num4}`
+    }else{
+        resultado_maior.textContent = `O números são todos iguais`
+    }
+
+
+    if(num1 < num2 && num1 < num3 && num1 < num4){
+        resultado_menor.textContent = `O menor número é o ${num1}`
+    }else if(num2 < num1 && num2 < num3 && num2 < num4){
+        resultado_menor.textContent = `O menor número é o ${num2}`
+    }else if(num3 < num1 && num3 < num2 && num3 < num4){
+        resultado_menor.textContent = `O menor número é o ${num3}`
+    }else if(num4 < num1 && num4 < num3 && num4 < num3){
+        resultado_menor.textContent = `O menor número é o ${num4}`
+    }
+})
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor</title>
+</head>
+<body>
+    <h1>Achando o maior e o menor número</h1>
+
+    <label for="n1">Primeiro número</label>
+    <input type="number" name="n1" id="n1" class="numeros" placeholder="Digite um número">
+    <br>
+
+    <label for="n2">Segundo número</label>
+    <input type="number" name="n2" id="n2" class="numeros" placeholder="Digite um número">
+    <br>
+
+
+    <label for="n3">Terceiro número</label>
+    <input type="number" name="n3" id="n3" class="numeros" placeholder="Digite um número">
+    <br>
+
+    <label for="n4">Quarto número</label>
+    <input type="number" name="n4" id="n4" class="numeros" placeholder="Digite um número">
+    <br>
+
+    <button id="botao">Procurar</button>
+
+    <p id="resultado_maior"></p>
+    <p id="resultado_menor"></p>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
+
+
+
+const numeros = document.querySelectorAll(".numeros")
+const botao = document.querySelector("#botao")
+const resultado_maior = document.querySelector("#resultado_maior")
+const resultado_menor = document.querySelector("#resultado_menor")
+
+botao.addEventListener("click", ()=>{
+    let maior = Number(numeros[0].value)
+    let menor = Number(numeros[0].value)
+    for(numero_da_vez of numeros){
+        const numero = Number(numero_da_vez.value)
+        if(numero > maior){
+            maior = numero
+        }
+        if(numero < menor){
+            menor = numero
+        }
+    }
+    resultado_maior.textContent = `O maior foi o ${maior}`
+    resultado_menor.textContent = `O menor foi o ${menor}`
+})
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de frutas</title>
+</head>
+<body>
+    <label for="fruta">Fruta</label>
+    <input type="text" name="fruta" id="fruta" placeholder="Digite uma fruta">
+    <button id="botao">Cadastrar</button>
+
+    <ul id="lista_resultados">
+    </ul>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
+
+
+const fruta = document.querySelector("#fruta")
+const botao = document.querySelector("#botao")
+const lista_resultados = document.querySelector("#lista_resultados")
+
+botao.addEventListener("click", ()=>{
+    if(fruta.value === ""){
+        alert("Preencha o campo")
+    }else{
+        const novo_elemento = document.createElement("li")
+        novo_elemento.textContent = fruta.value
+        lista_resultados.appendChild(novo_elemento)
+    }
+})
+
+
+
+
+
+const fruta = document.querySelector("#fruta")
+const botao = document.querySelector("#botao")
+const lista_resultados = document.querySelector("#lista_resultados")
+
+botao.addEventListener("click", ()=>{
+    if(fruta.value === ""){
+        alert("Preencha o campo")
+    }else{
+        const novo_elemento = document.createElement("li")
+        novo_elemento.textContent = fruta.value
+        novo_elemento.style.color = "red"
+        lista_resultados.appendChild(novo_elemento)
+
+        fruta.value = ""
+        fruta.focus()
+    }
+})
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de frutas</title>
+</head>
+<body>
+    <button id="gato">Gato</button>
+    <button id="cachorro">Cachorro</button>
+    <button id="papagaio">Papagaio</button>
+    <br>
+    <br>
+    
+    <img id="imagem" width="300" src="" alt="">
+    <p id="texto"></p>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
+
+
+
+const gato = document.querySelector("#gato")
+const cachorro = document.querySelector("#cachorro")
+const papagaio = document.querySelector("#papagaio")
+const imagem = document.querySelector("#imagem")
+const texto = document.querySelector("#texto")
+
+cachorro.addEventListener("click", ()=>{
+    imagem.src = "https://love.doghero.com.br/wp-content/uploads/2018/12/golden-retriever-1.png"
+    texto.textContent = "Esse é o meu cachorro"
+})
+
+gato.addEventListener("click", ()=>{
+    imagem.src = "https://www.petz.com.br/blog/wp-content/uploads/2019/07/vida-de-gato.jpg"
+    texto.textContent = "Esse é o meu gato"
+
+})
+
+papagaio.addEventListener("click", ()=>{
+    imagem.src = "https://static.wixstatic.com/media/3d5dc1_f7d76270e09c4ca9b53aedc8030160d9.jpg/v1/fill/w_480,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3d5dc1_f7d76270e09c4ca9b53aedc8030160d9.jpg"
+    texto.textContent = "Esse é o meu papagaio"
+
+})
+
+
+
+
+EVENTOS DE MOUSE
+const botao = document.querySelector("#botao")
+
+botao.addEventListener("mouseover", ()=>{
+    console.log("passou o mouse por cima")
+})
+
+botao.addEventListener("click", ()=>{
+    console.log("Clicou no botão")
+})
+
+botao.addEventListener("dblclick", ()=>{
+    console.log("Duplo click no botão")
+})
+
+botao.addEventListener("mouseout", ()=>{
+    console.log("tirou o mouse de cima")
+})
+
+
+
+EVENTOS DE TECLADO
+const meu_texto = document.querySelector("#meu_texto")
+const resultado = document.querySelector("#resultado")
+
+
+meu_texto.addEventListener("input", (evento)=>{
+    resultado.textContent =  evento.target.value;
+ })
+
+meu_texto.addEventListener("change", (evento)=>{
+    resultado.textContent =  evento.target.value;
+ })
